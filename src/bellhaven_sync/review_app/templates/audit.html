@@ -1,0 +1,71 @@
+{# The audit trail: every review decision and every CRM request, newest first. #}
+{% extends "base.html" %}
+{% block title %}Audit trail{% endblock %}
+{% block content %}
+<div class="eyebrow">Permanent record</div>
+<h1 class="mb-1">Audit trail</h1>
+<p class="muted">Every decision made in this app and every request it sent to the CRM. These records can be added to but never edited or deleted. A readable copy is saved to <span class="mono">{{ export_path }}</span> after each decision.</p>
+
+<div class="card mb-4">
+  <div class="card-header">Decisions and CRM changes</div>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>When (UTC)</th><th>Event</th><th>Proposal</th><th>Detail</th><th>Result</th></tr></thead>
+      <tbody>
+      {% for e in events %}
+        <tr>
+          <td class="small text-nowrap">{{ e.when }}</td>
+          <td class="small text-nowrap">{{ 'Review' if e.event == 'review' else 'CRM change' }}</td>
+          <td class="small"><a href="{{ url_for('review.proposal', proposal_id=e.proposal_id) }}">#{{ e.proposal_id }}</a> {{ e.title }}</td>
+          <td class="small">
+            {% if e.event == 'review' %}
+              by {{ e.reviewer or 'reviewer' }}{% if e.reason %} · “{{ e.reason }}”{% endif %}
+            {% else %}
+              <span class="mono">{{ e.method }} {{ e.path }}</span>
+              <span class="muted">authorised by review #{{ e.review_id }}</span>
+              {% if e.fields %}
+              <div>{% for field, pair in e.fields.items() %}
+                <div>{{ field_label(field) }}: <span class="was" style="text-decoration:line-through">{{ show(field, pair[0])|truncate(60) }}</span> &rarr; <b>{{ show(field, pair[1])|truncate(80) }}</b></div>
+              {% endfor %}</div>
+              {% endif %}
+              {% if e.error %}<div class="text-danger">{{ e.error }}</div>{% endif %}
+            {% endif %}
+          </td>
+          <td>
+            {% if e.event == 'review' %}<span class="badge b-{{ e.decision }}">{{ e.decision }}</span>
+            {% elif e.success %}<span class="badge b-applied">confirmed</span>
+            {% else %}<span class="badge b-failed">failed</span>{% endif %}
+          </td>
+        </tr>
+      {% else %}
+        <tr><td colspan="5" class="muted p-3">No decisions yet.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">Pipeline runs</div>
+  <div class="table-responsive">
+    <table class="table table-sm">
+      <thead><tr><th>Run</th><th>Started (UTC)</th><th>Status</th><th>Communities</th><th>Accounts</th><th>Proposals found</th><th>New</th><th>Already decided</th><th>Note</th></tr></thead>
+      <tbody>
+      {% for r in runs %}
+        <tr class="small">
+          <td>#{{ r.id }}</td><td class="text-nowrap">{{ r.started_at }}</td><td>{{ r.status }}</td>
+          <td>{{ r.locations_count if r.locations_count is not none else '–' }}</td>
+          <td>{{ r.accounts_count if r.accounts_count is not none else '–' }}</td>
+          <td>{{ r.proposals_total if r.proposals_total is not none else '–' }}</td>
+          <td>{{ r.proposals_new if r.proposals_new is not none else '–' }}</td>
+          <td>{{ r.proposals_suppressed if r.proposals_suppressed is not none else '–' }}</td>
+          <td>{{ r.message or '' }}</td>
+        </tr>
+      {% else %}
+        <tr><td colspan="9" class="muted p-3">No runs yet.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

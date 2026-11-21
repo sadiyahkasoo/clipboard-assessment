@@ -1,0 +1,104 @@
+{# Smoke test page (rehearsal mode only): the checks done before anything real is changed. #}
+{% extends "base.html" %}
+{% block title %}Smoke test{% endblock %}
+{% block content %}
+<div class="eyebrow">Before anything real is changed</div>
+<h1 class="mb-1">Smoke test and dry run</h1>
+<p class="muted">The CRM has no delete and no undo. These three checks happen before a real change is made. None of them can change the real CRM.</p>
+
+{# ---- Stage 1: automated tests ------------------------------------------- #}
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span>1 · Automated tests</span>
+    {% if test_run %}<span class="badge {{ 'b-applied' if test_run.ok else 'b-failed' }}">{{ 'passed' if test_run.ok else 'failed' }}</span>
+    {% else %}<span class="badge b-pending">not run in this session</span>{% endif %}
+  </div>
+  <div class="card-body">
+    <p class="mb-3">Checks the logic against saved copies of the website and the CRM backup: scraping, matching, the billing rule, duplicates, the audit trail and safe re-runs. Works offline and cannot reach the real CRM.</p>
+    <form method="post" action="{{ url_for('review.smoke_tests') }}">
+      <button class="btn btn-quiet">Run automated tests</button>
+      <span class="small muted ms-2">Takes a few seconds.</span>
+    </form>
+    {% if test_run %}
+    <div class="mt-3">
+      <div class="small muted mb-1">Last run {{ test_run.when }} · <b>{{ test_run.summary }}</b></div>
+      {% if not test_run.ok and test_run.output %}<pre class="req">{{ test_run.output }}</pre>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{# ---- Stage 2: rehearsal -------------------------------------------------- #}
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span>2 · Rehearsal on a local copy</span>
+    <span class="badge b-kind">{{ counts.pending }} waiting · {{ counts.approved }} approved · {{ counts.rejected }} rejected</span>
+  </div>
+  <div class="card-body">
+    <p class="mb-3">The whole flow, including Approve and Reject, working on a copy of the CRM built from the backup. Practise here as often as you like.</p>
+    <div class="d-flex flex-wrap gap-2 align-items-center">
+      <a class="btn btn-approve" href="{{ url_for('review.queue') }}">Open the rehearsal queue</a>
+      <a class="btn btn-quiet" href="{{ url_for('review.audit') }}">Rehearsal audit trail ({{ history_count }} entries)</a>
+      {% if managed %}
+      <form method="post" action="{{ url_for('review.smoke_reset') }}"
+            onsubmit="return confirm('Wipe this rehearsal and start again from the backup? Rehearsal decisions will be cleared. The real CRM is not affected.');">
+        <button class="btn btn-reject">Reset rehearsal</button>
+      </form>
+      {% endif %}
+    </div>
+    <p class="small muted mt-3 mb-0">Reset wipes the rehearsal decisions, rebuilds the local CRM from the backup and refills the queue (about 15 seconds). The real CRM and the production audit trail are not touched.</p>
+  </div>
+</div>
+
+{# ---- Stage 3: dry run ---------------------------------------------------- #}
+<div class="card mb-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <span>3 · Dry run against the real CRM</span>
+    {% if dry.available %}<span class="badge b-kind">{{ dry['items']|length }} proposals · {{ dry.request_count }} requests waiting</span>
+    {% else %}<span class="badge b-pending">not run yet</span>{% endif %}
+  </div>
+  <div class="card-body">
+    <p class="mb-3">The exact requests Production <b>would</b> send if every waiting proposal were approved. Listing them sends nothing. Refreshing re-reads the website and the real CRM, and writes nothing.</p>
+    {% if allow_production %}
+    <form method="post" action="{{ url_for('review.smoke_dry_run') }}">
+      <button class="btn btn-quiet">Refresh dry run (read-only)</button>
+      {% if dry.run %}<span class="small muted ms-2">Last read {{ dry.run.started_at }} · {{ dry.run.locations_count }} communities · {{ dry.run.accounts_count }} accounts{% if dry.decided %} · {{ dry.decided }} already decided in Production{% endif %}</span>{% endif %}
+    </form>
+    {% else %}
+    <p class="small muted mb-0">Refreshing is switched off because this session was started with --rehearsal-only. The list below is from the last dry run.</p>
+    {% endif %}
+  </div>
+  {% if dry['items'] %}
+  <div class="table-responsive border-top">
+    <table class="table table-sm">
+      <thead><tr><th style="width:3%">#</th><th style="width:30%">Proposal</th><th>Requests that would be sent</th></tr></thead>
+      <tbody>
+      {% for item in dry['items'] %}
+        <tr>
+          <td class="muted small">{{ loop.index }}</td>
+          <td>
+            <div class="fw-semibold">{{ item.proposal.title }}</div>
+            <span class="badge b-kind">{{ kind_labels[item.proposal.kind] }}</span>
+            <span class="badge b-{{ item.proposal.confidence }}">{{ item.proposal.confidence }}</span>
+          </td>
+          <td>
+            {% for r in item.requests %}
+            <div class="mono mb-1"><b>{{ r.method }}</b> /api/v1{{ r.path }}</div>
+            <div class="mono muted mb-2" style="word-break: break-word">{{ compact(r.body) }}</div>
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% elif dry.available %}
+  <div class="card-body border-top muted">Nothing is waiting in Production: every proposal has been decided.</div>
+  {% endif %}
+</div>
+
+<div class="panel-soft p-3 small">
+  <b>Stage 4</b> is the first real change, and it happens in Production, not here: approve one small edit and one creation, check each shows "confirmed by read-back", then carry on.
+  {% if allow_production %}Switch with the <b>Production</b> control at the top of the page.{% endif %}
+</div>
+{% endblock %}

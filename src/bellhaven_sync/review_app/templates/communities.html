@@ -1,0 +1,65 @@
+{# Every website community from the latest run, the group it fell into, and why. #}
+{% extends "base.html" %}
+{% block title %}Communities{% endblock %}
+{% block content %}
+<div class="eyebrow">From the website</div>
+<h1 class="mb-1">Communities</h1>
+<p class="muted">
+  {% if run %}{{ rows|length }} communities read from the Bellhaven website in the run of {{ run.started_at }}, each compared with the CRM.
+  {% else %}No pipeline run yet. Run the daily job to fill this page.{% endif %}
+</p>
+
+{% set group_labels = {'confident_match': 'Confident match', 'needs_fix': 'Needs a fix', 'duplicates': 'Has duplicates', 'new_account': 'No CRM account'} %}
+{% set group_badge = {'confident_match': 'b-high', 'needs_fix': 'b-medium', 'duplicates': 'b-medium', 'new_account': 'b-low'} %}
+
+{% if rows %}
+<div class="card mb-4">
+  <div class="table-responsive">
+    <table class="table">
+      <thead><tr><th>Community</th><th>Result</th><th>Score</th><th>Why</th><th>Proposals</th></tr></thead>
+      <tbody>
+      {% for row in rows %}
+        <tr>
+          <td><b>{{ row.name }}</b><div class="small muted">{{ row.city }}, {{ row.state }}</div></td>
+          <td>{% for g in row.groups %}<span class="badge {{ group_badge[g] }} mb-1">{{ group_labels[g] }}</span><br>{% endfor %}</td>
+          <td class="serif fs-5">{{ row.score if row.score is not none else '–' }}</td>
+          <td class="small">{{ row.reason }}</td>
+          <td class="small text-nowrap">
+            {% for key in row.proposal_keys %}{% if key in by_key %}
+              <a href="{{ url_for('review.proposal', proposal_id=by_key[key].id) }}">#{{ by_key[key].id }}</a>
+              <span class="badge b-{{ by_key[key].state }}">{{ by_key[key].state }}</span><br>
+            {% endif %}{% else %}<span class="muted">none needed</span>{% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h2>Under Bellhaven in the CRM, but not on the website</h2>
+<div class="card">
+  <div class="table-responsive">
+    <table class="table">
+      <thead><tr><th>Account</th><th>Why</th><th>Proposals</th></tr></thead>
+      <tbody>
+      {% for row in off %}
+        <tr>
+          <td><b>{{ row.name }}</b><div class="mono muted">{{ row.account_id }}</div></td>
+          <td class="small">{{ row.reason }}</td>
+          <td class="small text-nowrap">
+            {% for key in row.proposal_keys %}{% if key in by_key %}
+              <a href="{{ url_for('review.proposal', proposal_id=by_key[key].id) }}">#{{ by_key[key].id }}</a>
+              <span class="badge b-{{ by_key[key].state }}">{{ by_key[key].state }}</span><br>
+            {% endif %}{% else %}<span class="muted">none needed</span>{% endfor %}
+          </td>
+        </tr>
+      {% else %}
+        <tr><td colspan="3" class="muted">None.</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

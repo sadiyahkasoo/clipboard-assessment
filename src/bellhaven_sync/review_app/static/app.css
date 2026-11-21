@@ -1,0 +1,122 @@
+/*
+  Review app theme.
+  Colours and typefaces follow the look of clipboard.com (warm cream page,
+  dark maroon ink, bright yellow accent, serif headings, sans-serif body).
+  Layout comes from Bootstrap 5; this file only re-colours it.
+*/
+
+:root {
+  --cream: #f8f4ea;        /* page background */
+  --cream-deep: #f0e9d9;   /* panels, table headers */
+  --line: #e1ded4;         /* borders */
+  --ink: #37171a;          /* dark maroon: text, top bar */
+  --ink-soft: #6b5557;     /* secondary text */
+  --yellow: #fafa64;       /* primary accent */
+  --yellow-deep: #e6e650;
+  --crimson: #ca3051;      /* reject / danger */
+  --green: #1f7a4d;        /* applied / success */
+  --blue: #2563eb;         /* links */
+
+  --bs-body-bg: var(--cream);
+  --bs-body-color: var(--ink);
+  --bs-body-font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --bs-link-color: var(--blue);
+  --bs-link-color-rgb: 37, 99, 235;
+  --bs-border-color: var(--line);
+  --bs-border-radius: 10px;
+}
+
+body { background: var(--cream); color: var(--ink); }
+
+h1, h2, h3, h4, .serif { font-family: "Lora", Georgia, "Times New Roman", serif; font-weight: 500; }
+h1 { font-size: 2rem; letter-spacing: -0.01em; }
+h2 { font-size: 1.35rem; }
+.eyebrow { font-size: .72rem; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+.muted { color: var(--ink-soft); }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .82em; }
+
+/* Top bar */
+.topbar { background: var(--ink); }
+.topbar .navbar-brand { font-family: "Lora", Georgia, serif; color: #fff; font-size: 1.25rem; }
+.topbar .navbar-brand b { color: var(--yellow); font-weight: 500; }
+.topbar .nav-link { color: rgba(255,255,255,.78); font-size: .92rem; }
+.topbar .nav-link:hover, .topbar .nav-link.active { color: #fff; }
+.topbar .nav-link.active { box-shadow: inset 0 -2px 0 var(--yellow); }
+
+/* Mode banner: always visible so rehearsal and live are never confused */
+.modebar { font-size: .85rem; font-weight: 600; padding: .4rem 0; text-align: center; }
+.modebar.rehearsal { background: var(--yellow); color: var(--ink); }
+.modebar.live { background: var(--crimson); color: #fff; }
+
+/* Cards and panels */
+.card { background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 1px 2px rgba(55,23,26,.04); }
+.card-header { background: var(--cream-deep); border-bottom: 1px solid var(--line); border-radius: 14px 14px 0 0 !important; font-weight: 600; }
+.panel-soft { background: var(--cream-deep); border: 1px solid var(--line); border-radius: 14px; }
+
+a.proposal-row { display: block; color: inherit; text-decoration: none; border-top: 1px solid var(--line); padding: .85rem 1.1rem; }
+a.proposal-row:first-child { border-top: 0; }
+a.proposal-row:hover { background: var(--cream); }
+a.proposal-row .title { font-weight: 600; }
+
+/* Stat tiles */
+.stat { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: .9rem 1.1rem; }
+.stat .n { font-family: "Lora", Georgia, serif; font-size: 1.9rem; line-height: 1; }
+
+/* Buttons */
+.btn { border-radius: 999px; font-weight: 600; padding: .5rem 1.25rem; }
+.btn-approve { background: var(--yellow); border: 1px solid var(--ink); color: var(--ink); }
+.btn-approve:hover { background: var(--yellow-deep); color: var(--ink); border-color: var(--ink); }
+.btn-reject { background: #fff; border: 1px solid var(--crimson); color: var(--crimson); }
+.btn-reject:hover { background: var(--crimson); color: #fff; }
+.btn-quiet { background: #fff; border: 1px solid var(--line); color: var(--ink); }
+.btn-quiet:hover { background: var(--cream-deep); }
+
+/* Tabs */
+.nav-pills .nav-link { color: var(--ink); border-radius: 999px; font-weight: 600; font-size: .9rem; }
+.nav-pills .nav-link.active { background: var(--ink); color: #fff; }
+
+/* Badges */
+.badge { font-weight: 600; border-radius: 999px; padding: .35em .7em; }
+.b-kind { background: var(--cream-deep); color: var(--ink); border: 1px solid var(--line); }
+.b-high { background: #dff3e7; color: #14532d; }
+.b-medium { background: #fdf3c7; color: #6b4e00; }
+.b-low { background: #fbe1e6; color: #8f1d37; }
+.b-pending { background: #fff; color: var(--ink); border: 1px solid var(--ink); }
+.b-applied, .b-approved { background: var(--green); color: #fff; }
+.b-rejected { background: var(--ink-soft); color: #fff; }
+.b-failed { background: var(--crimson); color: #fff; }
+.b-withdrawn { background: var(--line); color: var(--ink-soft); }
+.b-role { background: var(--ink); color: #fff; }
+
+/* Tables */
+.table { --bs-table-bg: transparent; color: var(--ink); margin-bottom: 0; }
+.table thead th { background: var(--cream-deep); font-size: .74rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+.table td, .table th { border-color: var(--line); vertical-align: top; }
+.card > .table-responsive .table td:first-child, .card > .table-responsive .table th:first-child { padding-left: 1.1rem; }
+.card > .table-responsive .table td:last-child, .card > .table-responsive .table th:last-child { padding-right: 1.1rem; }
+td.was { color: var(--crimson); text-decoration: line-through; text-decoration-color: rgba(202,48,81,.45); }
+td.now { color: var(--green); font-weight: 600; }
+td.differs { background: #fff8d6; }
+
+/* Score breakdown bar */
+.scorebar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--line); }
+.scorebar span { display: block; height: 100%; }
+.seg-street { background: #37171a; } .seg-zip { background: #7b4a50; } .seg-city { background: #b08a8e; }
+.seg-name { background: #ca3051; } .seg-phone { background: #e3a43a; } .seg-admin { background: #1f7a4d; }
+.legend-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; }
+
+pre.req { background: #2a1214; color: #f8f4ea; border-radius: 10px; padding: .8rem 1rem; font-size: .8rem; white-space: pre-wrap; word-break: break-word; margin: 0; }
+.sop { border-left: 4px solid var(--crimson); background: #fff; border-radius: 0 10px 10px 0; padding: .75rem 1rem; }
+footer { color: var(--ink-soft); font-size: .8rem; }
+
+/* Mode switch in the top bar: Rehearsal | Production */
+.modeswitch { display: inline-flex; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 2px; font-size: .8rem; font-weight: 600; }
+.modeswitch a, .modeswitch span { padding: .28rem .85rem; border-radius: 999px; color: rgba(255,255,255,.8); text-decoration: none; white-space: nowrap; }
+.modeswitch a:hover { color: #fff; }
+.modeswitch a.on { background: var(--yellow); color: var(--ink); }
+.modeswitch a.on.prod { background: var(--crimson); color: #fff; }
+.modeswitch span.off { color: rgba(255,255,255,.4); cursor: not-allowed; }
+
+/* In production, the approve button turns red-edged as one more reminder that it is real. */
+body.mode-production .btn-approve { box-shadow: 0 0 0 3px rgba(202,48,81,.25); }
+.modal-content { border-radius: 16px; border: 1px solid var(--line); background: var(--cream); }

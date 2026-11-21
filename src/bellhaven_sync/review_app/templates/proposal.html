@@ -1,0 +1,227 @@
+{# One proposal: what would change, why, the evidence, the decision, and what was sent. #}
+{% extends "base.html" %}
+{% block title %}{{ p.title }}{% endblock %}
+{% block content %}
+<a class="small" href="{{ url_for('review.queue') }}">&larr; Back to queue</a>
+
+<div class="d-flex flex-wrap justify-content-between align-items-start gap-3 mt-2 mb-3">
+  <div>
+    <div class="eyebrow">{{ kind_labels[p.kind] }} · proposal #{{ p.id }}</div>
+    <h1 class="mb-2">{{ p.title }}</h1>
+    <span class="badge b-{{ p.confidence }}">{{ p.confidence }} confidence</span>
+    <span class="badge b-{{ p.state }}">{{ p.state }}</span>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-lg-8">
+
+    {# ---- Why ------------------------------------------------------------ #}
+    <div class="card mb-4">
+      <div class="card-header">Why this is proposed</div>
+      <div class="card-body">
+        <p class="mb-2">{{ p.summary }}</p>
+        {% if p.evidence.reasons %}
+        <ul class="mb-0 muted small">
+          {% for reason in p.evidence.reasons %}<li>{{ reason }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+        {% if p.evidence.sop %}
+        <div class="sop mt-3">
+          <div class="eyebrow">Billing rule check</div>
+          <div>{{ p.evidence.sop }}</div>
+          {% if p.evidence.billing %}
+          <div class="small muted mt-1">Lifetime revenue {{ show('lifetime_revenue', p.evidence.billing.lifetime_revenue) }}
+            · Outstanding AR {{ show('outstanding_ar', p.evidence.billing.outstanding_ar) }}</div>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {# ---- What would change --------------------------------------------- #}
+    <div class="card mb-4">
+      <div class="card-header">What will change in the CRM if approved</div>
+      {% for op in p.operations %}
+      <div class="px-3 pt-3 small">
+        <b>Step {{ op.step }}:</b>
+        {% if op.action == 'create' %}create a new account
+        {% else %}update <b>{{ op.account_name }}</b> <span class="mono muted">{{ op.account_id }}</span>{% endif %}
+      </div>
+      <div class="table-responsive p-3 pt-2">
+        <table class="table table-sm">
+          <thead><tr><th style="width:28%">Field</th>{% if op.action == 'update' %}<th>Now</th>{% endif %}<th>{{ 'Will become' if op.action == 'update' else 'Value' }}</th></tr></thead>
+          <tbody>
+          {% for field, value in op.set.items() %}
+            <tr>
+              <td>{{ field_label(field) }}</td>
+              {% if op.action == 'update' %}<td class="was">{{ show(field, op.expect[field]) }}</td>{% endif %}
+              <td class="now">{{ show(field, value) }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endfor %}
+      {% if p.kind in ('chow_new_account', 'chow_link_existing') %}
+      <div class="px-3 pb-3 small muted">The existing account's owner, name, address, status and billing figures are left exactly as they are.</div>
+      {% endif %}
+    </div>
+
+    {# ---- Evidence: website vs CRM, side by side ------------------------- #}
+    <div class="card mb-4">
+      <div class="card-header">Evidence</div>
+      <div class="table-responsive">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th style="width:16%"></th>
+              {% if p.evidence.website %}<th>Website</th>{% endif %}
+              {% for a in p.evidence.accounts %}
+              <th>CRM account <span class="badge b-role ms-1">{{ a.role }}</span></th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% set w = p.evidence.website %}
+            {% set rows = [('Name', 'name', 'name'), ('Street', 'street', 'billing_street'), ('City', 'city', 'billing_city'),
+                           ('State', 'state', 'billing_state'), ('Zip', 'zip', 'billing_zip'), ('Phone', 'phone', 'phone')] %}
+            {% for label, wkey, akey in rows %}
+            <tr>
+              <td class="muted">{{ label }}</td>
+              {% if w %}<td>{{ w[wkey] }}</td>{% endif %}
+              {% for a in p.evidence.accounts %}
+              <td class="{{ 'differs' if w and differs(akey, a[akey], w[wkey]) }}">{{ a[akey] or '(empty)' }}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+            <tr>
+              <td class="muted">Care</td>
+              {% if w %}<td>{{ w.care_offerings|join(', ') }}</td>{% endif %}
+              {% for a in p.evidence.accounts %}<td>{{ a.care_type or '(empty)' }}</td>{% endfor %}
+            </tr>
+            <tr>
+              <td class="muted">Owner</td>
+              {% if w %}<td>Bellhaven Senior Living <span class="muted small">(listed on its website)</span></td>{% endif %}
+              {% for a in p.evidence.accounts %}<td>{{ a.parent_name or '(no owner)' }}</td>{% endfor %}
+            </tr>
+            <tr>
+              <td class="muted">Status</td>
+              {% if w %}<td class="muted small">Administrator: {{ w.administrator }}</td>{% endif %}
+              {% for a in p.evidence.accounts %}<td>{{ a.status }}</td>{% endfor %}
+            </tr>
+            <tr>
+              <td class="muted">Billing</td>
+              {% if w %}<td></td>{% endif %}
+              {% for a in p.evidence.accounts %}
+              <td class="small">Revenue {{ show('lifetime_revenue', a.lifetime_revenue or 0) }}<br>Owed {{ show('outstanding_ar', a.outstanding_ar or 0) }}</td>
+              {% endfor %}
+            </tr>
+            <tr>
+              <td class="muted">Account id</td>
+              {% if w %}<td class="small"><a href="{{ w.url }}" target="_blank" rel="noopener">Open website page</a></td>{% endif %}
+              {% for a in p.evidence.accounts %}<td class="mono">{{ a.account_id }}</td>{% endfor %}
+            </tr>
+            {% if p.evidence.accounts|selectattr('score', 'defined')|list %}
+            <tr>
+              <td class="muted">Match score</td>
+              {% if w %}<td class="small muted">out of 100<br>65+ same facility<br>50–64 probable<br>30–49 lookalike</td>{% endif %}
+              {% for a in p.evidence.accounts %}
+              <td>
+                {% if a.score is defined %}
+                <div class="serif fs-4 lh-1 mb-1">{{ a.score }} <span class="small muted">{{ a.band }}</span></div>
+                <div class="scorebar mb-1" title="Score breakdown">
+                  {% for part in ['street', 'zip', 'city', 'name', 'phone', 'admin'] %}<span class="seg-{{ part }}" style="width: {{ a.score_parts[part] }}%"></span>{% endfor %}
+                </div>
+                <div class="small muted">
+                  {% for part in ['street', 'zip', 'city', 'name', 'phone', 'admin'] %}{% if a.score_parts[part] %}<span class="text-nowrap"><span class="legend-dot seg-{{ part }}"></span>{{ part }} {{ a.score_parts[part] }}</span> {% endif %}{% endfor %}
+                </div>
+                {% for note in a.score_notes %}<div class="small muted fst-italic">{{ note }}</div>{% endfor %}
+                {% endif %}
+              </td>
+              {% endfor %}
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
+      <div class="card-body pt-2 small muted">Highlighted cells differ from the website. Spelling habits such as "Ln" and "Lane" are treated as the same and are not highlighted.</div>
+    </div>
+
+    {# ---- What was actually sent (after a decision) ---------------------- #}
+    {% if changes %}
+    <div class="card mb-4">
+      <div class="card-header">What was sent to the CRM</div>
+      {% for c in changes %}
+      <div class="p-3 {{ 'border-top' if not loop.first }}">
+        <div class="d-flex justify-content-between small mb-2">
+          <span><b>Step {{ c.step }}</b> · <span class="mono">{{ c.method }} {{ c.path }}</span></span>
+          <span>{{ c.created_at }} ·
+            {% if c.success %}<span class="badge b-applied">confirmed by read-back</span>
+            {% else %}<span class="badge b-failed">failed</span>{% endif %}</span>
+        </div>
+        {% if c.fields %}
+        <table class="table table-sm">
+          <thead><tr><th style="width:28%">Field</th><th>Before</th><th>After</th></tr></thead>
+          <tbody>
+          {% for field, pair in c.fields.items() %}
+            <tr><td>{{ field_label(field) }}</td><td class="was">{{ show(field, pair[0]) }}</td><td class="now">{{ show(field, pair[1]) }}</td></tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        {% if c.method == 'POST' %}<div class="small muted mt-2">New account id: <span class="mono">{{ c.account_id }}</span></div>{% endif %}
+        {% endif %}
+        {% if c.error %}<div class="small text-danger mt-2">{{ c.error }}</div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {# ---- Exact requests, for technical readers -------------------------- #}
+    <details class="mb-4">
+      <summary class="small muted">Technical detail: exact CRM requests</summary>
+      {% for r in requests %}
+      <pre class="req mt-2">{{ r.method }} /api/v1{{ r.path }}
+{{ pretty(r.body) }}</pre>
+      {% endfor %}
+      <div class="small muted mt-2">Proposal fingerprint <span class="mono">{{ p.key }}</span> · first seen in run {{ p.first_seen_run }} · last seen in run {{ p.last_seen_run }}</div>
+    </details>
+  </div>
+
+  {# ---- Decision panel ---------------------------------------------------- #}
+  <div class="col-lg-4">
+    <div class="card position-sticky" style="top: 1rem">
+      <div class="card-header">Decision</div>
+      <div class="card-body">
+        {% if p.state == 'pending' %}
+          <form method="post">
+            <label class="form-label small muted" for="reason">Reason (optional, kept in the audit trail)</label>
+            <textarea class="form-control mb-3" id="reason" name="reason" rows="3" placeholder="e.g. PO Box is the correct billing address"></textarea>
+            <div class="d-grid gap-2">
+              <button class="btn btn-approve" formaction="{{ url_for('review.approve', proposal_id=p.id) }}">Approve and write to CRM</button>
+              <button class="btn btn-reject" formaction="{{ url_for('review.reject', proposal_id=p.id) }}">Reject</button>
+            </div>
+          </form>
+          <p class="small muted mt-3 mb-0">
+            {% if mode == 'live' %}Production: approving sends the change to the <b>real CRM</b> straight away. It cannot be deleted afterwards.
+            {% else %}Rehearsal: approving changes only the local copy.{% endif %}
+          </p>
+        {% elif p.state == 'withdrawn' %}
+          <p class="mb-0">The latest run no longer makes this suggestion, so there is nothing to decide.</p>
+        {% else %}
+          <div class="mb-2"><span class="badge b-{{ review.decision }}">{{ review.decision }}</span></div>
+          <div class="small">by {{ review.reviewer or 'reviewer' }}<br>{{ review.decided_at }} · {{ review.mode }}</div>
+          {% if review.reason %}<blockquote class="small mt-3 mb-0 ps-3 border-start">{{ review.reason }}</blockquote>{% endif %}
+          {% if p.state == 'failed' %}
+          <form method="post" action="{{ url_for('review.retry', proposal_id=p.id) }}" class="d-grid mt-3">
+            <button class="btn btn-approve">Retry writing to CRM</button>
+          </form>
+          <p class="small muted mt-2 mb-0">Steps that already succeeded are not repeated.</p>
+          {% endif %}
+          {% if p.state == 'rejected' %}<p class="small muted mt-3 mb-0">Nothing was sent to the CRM. This will not be proposed again.</p>{% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

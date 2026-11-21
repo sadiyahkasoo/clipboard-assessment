@@ -1,0 +1,64 @@
+{# Review queue: counts at the top, then proposals grouped by kind of change. #}
+{% extends "base.html" %}
+{% block title %}Review queue{% endblock %}
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-end mb-3 gap-2">
+  <div>
+    <div class="eyebrow">Bellhaven Senior Living</div>
+    <h1 class="mb-0">Review queue</h1>
+  </div>
+  {% if last_run %}
+  <div class="muted small text-end">
+    Last pipeline run: {{ last_run.started_at }} · {{ last_run.status }}<br>
+    {{ last_run.locations_count }} communities · {{ last_run.accounts_count }} accounts · {{ last_run.message }}
+  </div>
+  {% endif %}
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-6 col-md-3"><div class="stat"><div class="eyebrow">Waiting</div><div class="n">{{ counts.pending }}</div></div></div>
+  <div class="col-6 col-md-3"><div class="stat"><div class="eyebrow">Approved</div><div class="n">{{ counts.approved }}</div></div></div>
+  <div class="col-6 col-md-3"><div class="stat"><div class="eyebrow">Rejected</div><div class="n">{{ counts.rejected }}</div></div></div>
+  <div class="col-6 col-md-3"><div class="stat"><div class="eyebrow">Failed to write</div><div class="n">{{ counts.failed }}</div></div></div>
+</div>
+
+<ul class="nav nav-pills mb-3 gap-1">
+  {% for name, label in [('pending', 'Waiting'), ('approved', 'Approved'), ('rejected', 'Rejected'), ('all', 'All')] %}
+  <li class="nav-item"><a class="nav-link {{ 'active' if tab == name }}" href="{{ url_for('review.queue', tab=name) }}">{{ label }}</a></li>
+  {% endfor %}
+</ul>
+
+{% if not groups %}
+  <div class="card p-4 text-center">
+    <h2 class="mb-1">Nothing here</h2>
+    <p class="muted mb-0">
+      {% if tab == 'pending' %}Every proposal has been decided. The next daily run will add any new findings.
+      {% else %}No proposals in this view yet.{% endif %}
+    </p>
+  </div>
+{% endif %}
+
+{% for kind, members in groups.items() %}
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between">
+    <span>{{ kind_labels[kind] }}</span><span class="muted">{{ members|length }}</span>
+  </div>
+  <div>
+    {% for p in members %}
+    <a class="proposal-row" href="{{ url_for('review.proposal', proposal_id=p.id) }}">
+      <div class="d-flex justify-content-between align-items-start gap-3">
+        <div>
+          <div class="title">{{ p.title }}</div>
+          <div class="muted small">{{ p.summary|truncate(190) }}</div>
+        </div>
+        <div class="text-nowrap text-end">
+          <span class="badge b-{{ p.confidence }}">{{ p.confidence }} confidence</span>
+          {% if p.state != 'pending' %}<span class="badge b-{{ p.state }}">{{ p.state }}</span>{% endif %}
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endfor %}
+{% endblock %}
