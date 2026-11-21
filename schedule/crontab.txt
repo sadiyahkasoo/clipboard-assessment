@@ -1,0 +1,4 @@
+# Bellhaven ownership sync: run the read-only daily job every day at 07:00.
+# Install with:  crontab schedule/crontab.txt     Remove with:  crontab -r
+# It only reads the website and CRM and fills the review queue; it cannot change the CRM.
+0 7 * * * cd /Users/ismail/_devsrc/gen_code/clipboard-assessment && PYTHONPATH=src .venv/bin/python -m bellhaven_sync.pipeline --mode live >> logs/cron.log 2>&1
