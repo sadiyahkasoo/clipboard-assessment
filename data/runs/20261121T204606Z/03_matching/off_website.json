@@ -1,0 +1,29 @@
+[
+  {
+    "account_id": "00116ETS45BL7DTQP7",
+    "name": "Bellhaven Care Center of Alliance",
+    "group": "off_website",
+    "reason": "Under Bellhaven in the CRM but not on the website; no successor account found.",
+    "proposal_keys": [
+      "086d3aa942af95a0"
+    ]
+  },
+  {
+    "account_id": "0016PVXH4B25HWR7QE",
+    "name": "Bellhaven of Coldwater",
+    "group": "off_website",
+    "reason": "Under Bellhaven in the CRM but not on the website; no successor account found.",
+    "proposal_keys": [
+      "9b2f3d62444ba03b"
+    ]
+  },
+  {
+    "account_id": "001SXSF4ELF0Z2LGDM",
+    "name": "Bellhaven of Sandusky",
+    "group": "sold",
+    "reason": "Not on the website. \"Millstone Care of Sandusky\" (Millstone Health Partners (Parent Account)) is at the same address. Billing rule applies, so only the pointer is set.",
+    "proposal_keys": [
+      "d2a937edebe5149c"
+    ]
+  }
+]
