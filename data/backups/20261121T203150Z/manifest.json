@@ -1,0 +1,13 @@
+{
+  "accounts": {
+    "count": 121,
+    "sha256": "ff7bca0d83a4073f7dce6138124be97c21a11dd7819008722f486aef37285773"
+  },
+  "api_base": "https://analyst-assessment-production.up.railway.app/api/v1",
+  "contacts": {
+    "count": 67,
+    "sha256": "9d6e06210dd59270416b15348575d20a2f1ef20b0a8b5192fcbc05176d37162d"
+  },
+  "sandbox_owner": "Sadiyah Kasoo",
+  "taken_at_utc": "2026-11-21T20:31:50+00:00"
+}
