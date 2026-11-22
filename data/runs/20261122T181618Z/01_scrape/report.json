@@ -1,0 +1,127 @@
+{
+  "pages_visited": [
+    "/",
+    "/about",
+    "/communities?page=1",
+    "/communities?page=2",
+    "/communities?page=3"
+  ],
+  "communities_found": 35,
+  "communities_in_directory": 34,
+  "only_outside_directory": [
+    "bellhaven-meadows-of-findlay"
+  ],
+  "counts_claimed_by_site": {
+    "/": 35,
+    "/communities?page=1": 34,
+    "/communities?page=2": 34,
+    "/communities?page=3": 34
+  },
+  "found_on": {
+    "bellhaven-meadows-of-findlay": [
+      "/"
+    ],
+    "bellhaven-of-maplewood": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-new-carlisle": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-wooster": [
+      "/communities?page=1"
+    ],
+    "bellhaven-terrace-of-akron": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-saline": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-goshen": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-meadville": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-defiance": [
+      "/communities?page=1"
+    ],
+    "bellhaven-woods-of-toledo": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-marion": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-kalamazoo": [
+      "/communities?page=1"
+    ],
+    "bellhaven-court-of-altoona": [
+      "/communities?page=1"
+    ],
+    "bellhaven-rehabilitation-nursing-of-grove-city": [
+      "/communities?page=1"
+    ],
+    "bellhaven-at-sycamore-ridge": [
+      "/communities?page=1"
+    ],
+    "the-arbors-at-bellhaven-dayton": [
+      "/communities?page=1"
+    ],
+    "bellhaven-healthcare-centre-of-ashland": [
+      "/communities?page=1"
+    ],
+    "bellhaven-of-port-clinton": [
+      "/communities?page=2"
+    ],
+    "bellhaven-shores-of-erie": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-kettering": [
+      "/communities?page=2"
+    ],
+    "bellhaven-gardens-of-monroe": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-tiffin": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-marietta": [
+      "/communities?page=2"
+    ],
+    "bellhaven-crossings-of-lima": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-zanesville": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-chagrin-falls": [
+      "/communities?page=2"
+    ],
+    "bellhaven-willow-creek": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-ashtabula": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-owosso": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-portsmouth": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-batavia": [
+      "/communities?page=2"
+    ],
+    "bellhaven-at-union-square": [
+      "/communities?page=2"
+    ],
+    "bellhaven-of-carlisle": [
+      "/communities?page=2"
+    ],
+    "amberly-manor": [
+      "/communities?page=3"
+    ],
+    "bellhaven-of-chesterton": [
+      "/communities?page=3"
+    ]
+  }
+}

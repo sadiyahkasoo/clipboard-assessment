@@ -1,0 +1,1180 @@
+[
+  {
+    "slug": "bellhaven-meadows-of-findlay",
+    "name": "Bellhaven Meadows of Findlay",
+    "city": "Findlay",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven Meadows of Findlay\" (score 90) under no owner; revenue history but nothing owed, so it can be moved directly.",
+    "account_id": "001UKEFGADQ8YCZ4YM",
+    "score": 90,
+    "proposal_keys": [
+      "dc76d14e9fcb2cf0"
+    ],
+    "candidates": [
+      {
+        "account_id": "001UKEFGADQ8YCZ4YM",
+        "name": "Bellhaven Meadows of Findlay",
+        "parent_name": "",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-maplewood",
+    "name": "Bellhaven of Maplewood",
+    "city": "Maplewood",
+    "state": "OH",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Maplewood\" (score 100), already under Bellhaven with matching details.",
+    "account_id": "001L3LGR6W69J8DYYV",
+    "score": 100,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001L3LGR6W69J8DYYV",
+        "name": "Bellhaven of Maplewood",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 100,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      },
+      {
+        "account_id": "0019M1Z45PGV2DJ971",
+        "name": "Maplewood Senior Care Center",
+        "parent_name": "Stonebridge Eldercare (Parent Account)",
+        "score": 35,
+        "band": "lookalike",
+        "parts": {
+          "street": 0,
+          "zip": 15,
+          "city": 10,
+          "name": 10,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-new-carlisle",
+    "name": "Bellhaven of New Carlisle",
+    "city": "New Carlisle",
+    "state": "OH",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of New Carlisle\" (score 100), already under Bellhaven with matching details.",
+    "account_id": "001AQGPZ5G5VRES536",
+    "score": 100,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001AQGPZ5G5VRES536",
+        "name": "Bellhaven of New Carlisle",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 100,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-wooster",
+    "name": "Bellhaven of Wooster",
+    "city": "Wooster",
+    "state": "OH",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Wooster\" (score 95), already under Bellhaven with matching details.",
+    "account_id": "001W5G121A7SMRP58M",
+    "score": 95,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001W5G121A7SMRP58M",
+        "name": "Bellhaven of Wooster",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 95,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-terrace-of-akron",
+    "name": "Bellhaven Terrace of Akron",
+    "city": "Akron",
+    "state": "OH",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven Terrace of Akron\" (score 100), already under Bellhaven with matching details.",
+    "account_id": "0019Y4J61ZBG4R00CD",
+    "score": 100,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "0019Y4J61ZBG4R00CD",
+        "name": "Bellhaven Terrace of Akron",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 100,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-saline",
+    "name": "Bellhaven of Saline",
+    "city": "Saline",
+    "state": "MI",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Saline\" (score 95), already under Bellhaven with matching details.",
+    "account_id": "001MVVAPY6U5TVYRC4",
+    "score": 95,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001MVVAPY6U5TVYRC4",
+        "name": "Bellhaven of Saline",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 95,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-goshen",
+    "name": "Bellhaven of Goshen",
+    "city": "Goshen",
+    "state": "IN",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Goshen\" (score 90), already under Bellhaven with matching details.",
+    "account_id": "001JQER1RMYKNRLNME",
+    "score": 90,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001JQER1RMYKNRLNME",
+        "name": "Bellhaven of Goshen",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-meadville",
+    "name": "Bellhaven of Meadville",
+    "city": "Meadville",
+    "state": "PA",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Meadville\" (score 95), already under Bellhaven with matching details.",
+    "account_id": "001KC1NG7EZDEKKA3T",
+    "score": 95,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001KC1NG7EZDEKKA3T",
+        "name": "Bellhaven of Meadville",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 95,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-defiance",
+    "name": "Bellhaven of Defiance",
+    "city": "Defiance",
+    "state": "OH",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Defiance\" (score 90), already under Bellhaven with matching details.",
+    "account_id": "001R4PXTUD9R6FNN8V",
+    "score": 90,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001R4PXTUD9R6FNN8V",
+        "name": "Bellhaven of Defiance",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-woods-of-toledo",
+    "name": "Bellhaven Woods of Toledo",
+    "city": "Toledo",
+    "state": "OH",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven Woods of Toledo\" (score 100), already under Bellhaven with matching details.",
+    "account_id": "0014DHACE6WQU3RMM5",
+    "score": 100,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "0014DHACE6WQU3RMM5",
+        "name": "Bellhaven Woods of Toledo",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 100,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-marion",
+    "name": "Bellhaven of Marion",
+    "city": "Marion",
+    "state": "OH",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Marion\" (score 90), already under Bellhaven with matching details.",
+    "account_id": "0015L38R1Z5947ZZP7",
+    "score": 90,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "0015L38R1Z5947ZZP7",
+        "name": "Bellhaven of Marion",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-kalamazoo",
+    "name": "Bellhaven of Kalamazoo",
+    "city": "Kalamazoo",
+    "state": "MI",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven of Kalamazoo\" (score 100), already under Bellhaven with matching details.",
+    "account_id": "001NSHWKQD0YJLPQ20",
+    "score": 100,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "001NSHWKQD0YJLPQ20",
+        "name": "Bellhaven of Kalamazoo",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 100,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-court-of-altoona",
+    "name": "Bellhaven Court of Altoona",
+    "city": "Altoona",
+    "state": "PA",
+    "groups": [
+      "confident_match"
+    ],
+    "reason": "Matched \"Bellhaven Court of Altoona\" (score 100), already under Bellhaven with matching details.",
+    "account_id": "0011D2P3CWSHMF81C8",
+    "score": 100,
+    "proposal_keys": [],
+    "candidates": [
+      {
+        "account_id": "0011D2P3CWSHMF81C8",
+        "name": "Bellhaven Court of Altoona",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 100,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-rehabilitation-nursing-of-grove-city",
+    "name": "Bellhaven Rehabilitation & Nursing of Grove City",
+    "city": "Grove City",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven Rehab and Nursing of Grove City\" (score 95); differs: name \"Bellhaven Rehab and Nursing of Grove City\" -> \"Bellhaven Rehabilitation & Nursing of Grove City\".",
+    "account_id": "001TZCSTBZFM6K5BGN",
+    "score": 95,
+    "proposal_keys": [
+      "05e629c235cd8280"
+    ],
+    "candidates": [
+      {
+        "account_id": "001TZCSTBZFM6K5BGN",
+        "name": "Bellhaven Rehab and Nursing of Grove City",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 95,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-at-sycamore-ridge",
+    "name": "Bellhaven at Sycamore Ridge",
+    "city": "Miamisburg",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven of Sycamore Ridge\" (score 85); differs: name \"Bellhaven of Sycamore Ridge\" -> \"Bellhaven at Sycamore Ridge\".",
+    "account_id": "00191H7JR16471SZ34",
+    "score": 85,
+    "proposal_keys": [
+      "84d76dfdec2326c7"
+    ],
+    "candidates": [
+      {
+        "account_id": "00191H7JR16471SZ34",
+        "name": "Bellhaven of Sycamore Ridge",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 85,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "the-arbors-at-bellhaven-dayton",
+    "name": "The Arbors at Bellhaven - Dayton",
+    "city": "Dayton",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Arbors at Bellhaven Dayton\" (score 90); differs: name \"Arbors at Bellhaven Dayton\" -> \"The Arbors at Bellhaven - Dayton\".",
+    "account_id": "0010KJFP601YNTZVDA",
+    "score": 90,
+    "proposal_keys": [
+      "472494a612e8fb35"
+    ],
+    "candidates": [
+      {
+        "account_id": "0010KJFP601YNTZVDA",
+        "name": "Arbors at Bellhaven Dayton",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-healthcare-centre-of-ashland",
+    "name": "Bellhaven Healthcare Centre of Ashland",
+    "city": "Ashland",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven Health Care Center of Ashland\" (score 90); differs: name \"Bellhaven Health Care Center of Ashland\" -> \"Bellhaven Healthcare Centre of Ashland\".",
+    "account_id": "001RJ0D7Z5MAZN5HX5",
+    "score": 90,
+    "proposal_keys": [
+      "9e15f9adc8d8094e"
+    ],
+    "candidates": [
+      {
+        "account_id": "001RJ0D7Z5MAZN5HX5",
+        "name": "Bellhaven Health Care Center of Ashland",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-port-clinton",
+    "name": "Bellhaven of Port Clinton",
+    "city": "Port Clinton",
+    "state": "OH",
+    "groups": [
+      "confident_match",
+      "duplicates"
+    ],
+    "reason": "Matched \"Bellhaven of Port Clinton\" (score 90), already under Bellhaven with matching details. 1 duplicate copy found.",
+    "account_id": "001UELXDAKFRKB8932",
+    "score": 90,
+    "proposal_keys": [
+      "1118873e9c72097f"
+    ],
+    "candidates": [
+      {
+        "account_id": "001UELXDAKFRKB8932",
+        "name": "Bellhaven of Port Clinton",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      },
+      {
+        "account_id": "001JD2MWRA74LTSN24",
+        "name": "Harborview Nursing & Rehab of Port Clinton",
+        "parent_name": "Harborview Care Group (Parent Account)",
+        "score": 73,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 8,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-shores-of-erie",
+    "name": "Bellhaven Shores of Erie",
+    "city": "Erie",
+    "state": "PA",
+    "groups": [
+      "confident_match",
+      "duplicates"
+    ],
+    "reason": "Matched \"Bellhaven Shores of Erie\" (score 90), already under Bellhaven with matching details. 1 duplicate copy found.",
+    "account_id": "001CVBBCSDM7YHN220",
+    "score": 90,
+    "proposal_keys": [
+      "6868807f01963a12"
+    ],
+    "candidates": [
+      {
+        "account_id": "001CVBBCSDM7YHN220",
+        "name": "Bellhaven Shores of Erie",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 90,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 5
+        }
+      },
+      {
+        "account_id": "001BLYF02K97SZLZHH",
+        "name": "Harborview Shores of Erie",
+        "parent_name": "Harborview Care Group (Parent Account)",
+        "score": 78,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 13,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-kettering",
+    "name": "Bellhaven of Kettering",
+    "city": "Kettering",
+    "state": "OH",
+    "groups": [
+      "needs_fix",
+      "duplicates",
+      "duplicates"
+    ],
+    "reason": "Matched \"Kettering Care Centre\" (score 77) under Harborview Care Group (Parent Account); no revenue history, so it can be moved directly. 2 duplicate copies found.",
+    "account_id": "001WR41PYNWXCAE2X4",
+    "score": 77,
+    "proposal_keys": [
+      "d6f50f9e4d6e78e3",
+      "9b0e26a54f712677",
+      "ad2b87d655aa76bf"
+    ],
+    "candidates": [
+      {
+        "account_id": "001WR41PYNWXCAE2X4",
+        "name": "Kettering Care Centre",
+        "parent_name": "Harborview Care Group (Parent Account)",
+        "score": 77,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 12,
+          "phone": 0,
+          "admin": 0
+        }
+      },
+      {
+        "account_id": "001B7XZAA3AFALS9GP",
+        "name": "Kettering Senior Campus",
+        "parent_name": "Cedar Trail Communities (Parent Account)",
+        "score": 76,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 11,
+          "phone": 0,
+          "admin": 0
+        }
+      },
+      {
+        "account_id": "0016KTS1UAWBRXS09J",
+        "name": "Kettering Nursing & Rehabilitation",
+        "parent_name": "",
+        "score": 74,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 9,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-gardens-of-monroe",
+    "name": "Bellhaven Gardens of Monroe",
+    "city": "Monroe",
+    "state": "MI",
+    "groups": [
+      "confident_match",
+      "duplicates",
+      "duplicates"
+    ],
+    "reason": "Matched \"Bellhaven Gardens of Monroe\" (score 85), already under Bellhaven with matching details. 2 duplicate copies found.",
+    "account_id": "001U1750VLVJAGG1S5",
+    "score": 85,
+    "proposal_keys": [
+      "70bb3b9042b30603",
+      "125898a0c96d6acd"
+    ],
+    "candidates": [
+      {
+        "account_id": "001U1750VLVJAGG1S5",
+        "name": "Bellhaven Gardens of Monroe",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 85,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 0
+        }
+      },
+      {
+        "account_id": "00159PL81N38KM4FHM",
+        "name": "Monroe Gardens Care Center",
+        "parent_name": "Harborview Care Group (Parent Account)",
+        "score": 79,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 14,
+          "phone": 0,
+          "admin": 0
+        }
+      },
+      {
+        "account_id": "0011AB44D05WLA9HTX",
+        "name": "Cedar Trail of Monroe",
+        "parent_name": "Cedar Trail Communities (Parent Account)",
+        "score": 76,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 11,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-tiffin",
+    "name": "Bellhaven of Tiffin",
+    "city": "Tiffin",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven of Tiffin\" (score 85) under Cedar Trail Communities (Parent Account). It has revenue 84,000 and outstanding AR 12,400, so the billing rule applies.",
+    "account_id": "001U6RW32TY0WSXZZB",
+    "score": 85,
+    "proposal_keys": [
+      "346474d9b07adc0c"
+    ],
+    "candidates": [
+      {
+        "account_id": "001U6RW32TY0WSXZZB",
+        "name": "Bellhaven of Tiffin",
+        "parent_name": "Cedar Trail Communities (Parent Account)",
+        "score": 85,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-marietta",
+    "name": "Bellhaven of Marietta",
+    "city": "Marietta",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven of Marietta\" (score 85) under Cedar Trail Communities (Parent Account). It has revenue 51,250 and outstanding AR 3,800, so the billing rule applies.",
+    "account_id": "001A34WFSUYHCRBLFT",
+    "score": 85,
+    "proposal_keys": [
+      "41b6f5676f5eacf5"
+    ],
+    "candidates": [
+      {
+        "account_id": "001A34WFSUYHCRBLFT",
+        "name": "Bellhaven of Marietta",
+        "parent_name": "Cedar Trail Communities (Parent Account)",
+        "score": 85,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-crossings-of-lima",
+    "name": "Bellhaven Crossings of Lima",
+    "city": "Lima",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven Crossings of Lima\" (score 85) under Harborview Care Group (Parent Account); revenue history but nothing owed, so it can be moved directly.",
+    "account_id": "001LGFPBJY4N9MB6KL",
+    "score": 85,
+    "proposal_keys": [
+      "f6f55a0ae4ef4db2"
+    ],
+    "candidates": [
+      {
+        "account_id": "001LGFPBJY4N9MB6KL",
+        "name": "Bellhaven Crossings of Lima",
+        "parent_name": "Harborview Care Group (Parent Account)",
+        "score": 85,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-zanesville",
+    "name": "Bellhaven of Zanesville",
+    "city": "Zanesville",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Cedar Trail of Zanesville\" (score 82) under Cedar Trail Communities (Parent Account); no revenue history, so it can be moved directly.",
+    "account_id": "001H1JMVZWP46D5VUF",
+    "score": 82,
+    "proposal_keys": [
+      "7110cf7d28aa660d"
+    ],
+    "candidates": [
+      {
+        "account_id": "001H1JMVZWP46D5VUF",
+        "name": "Cedar Trail of Zanesville",
+        "parent_name": "Cedar Trail Communities (Parent Account)",
+        "score": 82,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 12,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-chagrin-falls",
+    "name": "Bellhaven of Chagrin Falls",
+    "city": "Chagrin Falls",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Riverbend Manor Care Center\" (score 75); differs: name \"Riverbend Manor Care Center\" -> \"Bellhaven of Chagrin Falls\".",
+    "account_id": "001RJU1X4NBWC1Q0G7",
+    "score": 75,
+    "proposal_keys": [
+      "88ad8f30dab34dfa"
+    ],
+    "candidates": [
+      {
+        "account_id": "001RJU1X4NBWC1Q0G7",
+        "name": "Riverbend Manor Care Center",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 75,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 5,
+          "phone": 0,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-willow-creek",
+    "name": "Bellhaven Willow Creek",
+    "city": "Portage",
+    "state": "MI",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Sunny Acres Retirement Home\" (score 71); differs: name \"Sunny Acres Retirement Home\" -> \"Bellhaven Willow Creek\".",
+    "account_id": "0017MN2JYAJBDS8WQZ",
+    "score": 71,
+    "proposal_keys": [
+      "3dabfcc8b7b1525b"
+    ],
+    "candidates": [
+      {
+        "account_id": "0017MN2JYAJBDS8WQZ",
+        "name": "Sunny Acres Retirement Home",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 71,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 6,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-ashtabula",
+    "name": "Bellhaven of Ashtabula",
+    "city": "Ashtabula",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven of Ashtabula\" (score 60); differs: street \"PO Box 517\" -> \"3156 W Prospect Rd\".",
+    "account_id": "001NXP9X46CWEPSLSV",
+    "score": 60,
+    "proposal_keys": [
+      "23deceba373fc4fe"
+    ],
+    "candidates": [
+      {
+        "account_id": "001NXP9X46CWEPSLSV",
+        "name": "Bellhaven of Ashtabula",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 60,
+        "band": "probable",
+        "parts": {
+          "street": 0,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-owosso",
+    "name": "Bellhaven of Owosso",
+    "city": "Owosso",
+    "state": "MI",
+    "groups": [
+      "confident_match",
+      "duplicates"
+    ],
+    "reason": "Matched \"Bellhaven of Owosso\" (score 100), already under Bellhaven with matching details. 1 duplicate copy found.",
+    "account_id": "001EGU7BMJ942ZTRE6",
+    "score": 100,
+    "proposal_keys": [
+      "66428575b0fe69fb"
+    ],
+    "candidates": [
+      {
+        "account_id": "001EGU7BMJ942ZTRE6",
+        "name": "Bellhaven of Owosso",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 100,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      },
+      {
+        "account_id": "001QU150PM4Z15UA71",
+        "name": "Bellhaven of Owosso",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 85,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 20,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-portsmouth",
+    "name": "Bellhaven of Portsmouth",
+    "city": "Portsmouth",
+    "state": "OH",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Bellhaven of Portsmouth\" (score 93); differs: zip \"45626\" -> \"45662\".",
+    "account_id": "001CF3LDWVRGL09P4F",
+    "score": 93,
+    "proposal_keys": [
+      "fc411ef45cca1b63"
+    ],
+    "candidates": [
+      {
+        "account_id": "001CF3LDWVRGL09P4F",
+        "name": "Bellhaven of Portsmouth",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 93,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 8,
+          "city": 10,
+          "name": 20,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-batavia",
+    "name": "Bellhaven of Batavia",
+    "city": "Batavia",
+    "state": "OH",
+    "groups": [
+      "new_account"
+    ],
+    "reason": "No CRM account scores 50 or more for this community.",
+    "account_id": "",
+    "score": null,
+    "proposal_keys": [
+      "ba8313d25f9b36ba"
+    ],
+    "candidates": []
+  },
+  {
+    "slug": "bellhaven-at-union-square",
+    "name": "Bellhaven at Union Square",
+    "city": "New Albany",
+    "state": "OH",
+    "groups": [
+      "new_account"
+    ],
+    "reason": "No CRM account scores 50 or more for this community. Lookalikes considered and left alone: \"Union Square Senior Living\" (New Albany, score 38).",
+    "account_id": "",
+    "score": null,
+    "proposal_keys": [
+      "1eabd6ebdcef7788"
+    ],
+    "candidates": [
+      {
+        "account_id": "001GNU41AVXZRLLJ9P",
+        "name": "Union Square Senior Living",
+        "parent_name": "Juniper Point Healthcare (Parent Account)",
+        "score": 38,
+        "band": "lookalike",
+        "parts": {
+          "street": 0,
+          "zip": 15,
+          "city": 10,
+          "name": 13,
+          "phone": 0,
+          "admin": 0
+        }
+      }
+    ]
+  },
+  {
+    "slug": "bellhaven-of-carlisle",
+    "name": "Bellhaven of Carlisle",
+    "city": "Carlisle",
+    "state": "PA",
+    "groups": [
+      "new_account"
+    ],
+    "reason": "No CRM account scores 50 or more for this community.",
+    "account_id": "",
+    "score": null,
+    "proposal_keys": [
+      "3835a7a7dcca63a1"
+    ],
+    "candidates": []
+  },
+  {
+    "slug": "amberly-manor",
+    "name": "Amberly Manor",
+    "city": "Hudson",
+    "state": "OH",
+    "groups": [
+      "new_account"
+    ],
+    "reason": "No CRM account scores 50 or more for this community.",
+    "account_id": "",
+    "score": null,
+    "proposal_keys": [
+      "5ab1a2e434d4ab3e"
+    ],
+    "candidates": []
+  },
+  {
+    "slug": "bellhaven-of-chesterton",
+    "name": "Bellhaven of Chesterton",
+    "city": "Chesterton",
+    "state": "IN",
+    "groups": [
+      "needs_fix"
+    ],
+    "reason": "Matched \"Chesterton Senior Commons\" (score 91); differs: name \"Chesterton Senior Commons\" -> \"Bellhaven of Chesterton\".",
+    "account_id": "0013NUZQHQUEZ8DXEG",
+    "score": 91,
+    "proposal_keys": [
+      "e848213550ff4298"
+    ],
+    "candidates": [
+      {
+        "account_id": "0013NUZQHQUEZ8DXEG",
+        "name": "Chesterton Senior Commons",
+        "parent_name": "Bellhaven Senior Living (Parent Account)",
+        "score": 91,
+        "band": "match",
+        "parts": {
+          "street": 40,
+          "zip": 15,
+          "city": 10,
+          "name": 11,
+          "phone": 10,
+          "admin": 5
+        }
+      }
+    ]
+  }
+]

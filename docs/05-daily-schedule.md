@@ -1,6 +1,8 @@
 # Step: the daily schedule
 
-**Status: prepared, not yet switched on.** By agreement this is the last step, done after the real review is finished.
+**Status: live since 22 November 2026.** The entry is installed on this computer and runs every day at 07:00.
+
+How it was proven: the scheduled command was first run by hand, then a one-off test entry was set two minutes ahead. It fired by itself at 20:18 (run 3 in `logs/daily.log`) and found nothing new to suggest. The test entry was then removed, leaving only the 07:00 entry.
 
 ## What runs each day
 

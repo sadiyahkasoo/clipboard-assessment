@@ -1,0 +1,26 @@
+{
+  "run_id": 3,
+  "mode": "live",
+  "started_at": "20261122T181800Z",
+  "run_dir": "/Users/ismail/_devsrc/gen_code/clipboard-assessment/data/runs/20261122T181800Z",
+  "locations": 35,
+  "accounts": 121,
+  "status": "ok",
+  "proposals": {
+    "total": 29,
+    "new": 0,
+    "refreshed": 29,
+    "suppressed": 0,
+    "withdrawn": 0
+  },
+  "community_groups": {
+    "needs_fix": 15,
+    "confident_match": 16,
+    "duplicates": 7,
+    "new_account": 4
+  },
+  "off_website": 3,
+  "only_outside_directory": [
+    "bellhaven-meadows-of-findlay"
+  ]
+}
