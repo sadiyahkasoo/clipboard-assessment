@@ -6,8 +6,8 @@ The CRM has no delete and no undo. So before any real change is sent, the tool i
 |---|---|---|---|
 | 1. Automated tests | The logic is right: scraping, matching, the billing rule, duplicates, the audit trail, safe re-runs | No | **Done: 86 tests pass** |
 | 2. Rehearsal | The whole flow works end to end, including approving and rejecting in the app | No (local copy) | **Done**, and repeatable any time |
-| 3. Dry run | The exact requests that *would* be sent to the real CRM are correct | Reads only | **Done and signed off** (real changes on hold until the go-ahead) |
-| 4. First real changes | The real CRM accepts our requests | Yes, two approved items | **Not started: needs you** |
+| 3. Dry run | The exact requests that *would* be sent to the real CRM are correct | Reads only | **Done and signed off** |
+| 4. First real changes | The real CRM accepts our requests | Yes, two approved items | **Done:** one rename (Chagrin Falls) and one new account (Batavia) landed and were confirmed before the rest were approved |
 
 ## Stage 1: automated tests
 

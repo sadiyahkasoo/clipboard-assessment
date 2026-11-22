@@ -1,7 +1,5 @@
 # Write-up: Bellhaven ownership sync
 
-> **Draft.** The sections marked "to complete after the review" depend on the real review and should be filled in once it is done. Edit the wording so it reads in your own voice.
-
 ## What I built
 
 A small system that keeps the CRM's facility-to-parent links in step with the Bellhaven Senior Living website.
