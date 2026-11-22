@@ -1,0 +1,77 @@
+[
+  {
+    "key": "23deceba373fc4fe",
+    "kind": "address_update",
+    "title": "Address differs: Bellhaven of Ashtabula",
+    "summary": "The CRM account matches this community but differs from the website: street \"PO Box 517\" -> \"3156 W Prospect Rd\". The CRM holds a PO Box, which can be a valid billing address; consider rejecting if billing mail goes there.",
+    "confidence": "low",
+    "slug": "bellhaven-of-ashtabula",
+    "account_id": "001NXP9X46CWEPSLSV",
+    "evidence": {
+      "website": {
+        "slug": "bellhaven-of-ashtabula",
+        "url": "https://analyst-assessment-production.up.railway.app/communities/bellhaven-of-ashtabula",
+        "name": "Bellhaven of Ashtabula",
+        "street": "3156 W Prospect Rd",
+        "city": "Ashtabula",
+        "state": "OH",
+        "zip": "44004",
+        "care_offerings": [
+          "Short-Term Rehabilitation & Nursing"
+        ],
+        "administrator": "Ned Green",
+        "phone": "(260) 440-4975"
+      },
+      "accounts": [
+        {
+          "account_id": "001NXP9X46CWEPSLSV",
+          "name": "Bellhaven of Ashtabula",
+          "parent_id": "0015QAPLGS3FVYEEEM",
+          "parent_name": "Bellhaven Senior Living (Parent Account)",
+          "billing_street": "PO Box 517",
+          "billing_city": "Ashtabula",
+          "billing_state": "OH",
+          "billing_zip": "44004",
+          "care_type": "Skilled Nursing",
+          "status": "Active",
+          "phone": "(260) 440-4975",
+          "lifetime_revenue": 0,
+          "outstanding_ar": 0,
+          "chow_current_account": "",
+          "duplicate_of_account": "",
+          "note": "",
+          "role": "match",
+          "score": 60,
+          "band": "probable",
+          "score_parts": {
+            "street": 0,
+            "zip": 15,
+            "city": 10,
+            "name": 20,
+            "phone": 10,
+            "admin": 5
+          },
+          "score_notes": []
+        }
+      ],
+      "reasons": [
+        "Same facility (score 60).",
+        "Owner is already Bellhaven."
+      ]
+    },
+    "operations": [
+      {
+        "step": 1,
+        "action": "update",
+        "account_id": "001NXP9X46CWEPSLSV",
+        "account_name": "Bellhaven of Ashtabula",
+        "set": {
+          "billing_street": "3156 W Prospect Rd"
+        },
+        "expect": {
+          "billing_street": "PO Box 517"
+        }
+      }
+    ]
+  }
+]

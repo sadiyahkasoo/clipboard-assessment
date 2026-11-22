@@ -1,0 +1,16 @@
+[
+  {
+    "account_id": "00116ETS45BL7DTQP7",
+    "name": "Bellhaven Care Center of Alliance",
+    "group": "off_website_already_flagged",
+    "reason": "Not on the website; already marked Needs Review, nothing to do.",
+    "proposal_keys": []
+  },
+  {
+    "account_id": "0016PVXH4B25HWR7QE",
+    "name": "Bellhaven of Coldwater",
+    "group": "off_website_already_flagged",
+    "reason": "Not on the website; already marked Needs Review, nothing to do.",
+    "proposal_keys": []
+  }
+]

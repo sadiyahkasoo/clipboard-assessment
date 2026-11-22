@@ -84,7 +84,7 @@ After a change of ownership, the preserved old account is treated as history and
 - **Owosso** has two identical accounts under Bellhaven. I kept the one whose phone number and contacts match the website.
 - **Sandusky** is under Bellhaven in the CRM, is not on the website, and "Millstone Care of Sandusky" exists at the same address under another owner. I read that as a sale. Because Sandusky owes 5,200, I left the account as it is and set its `chow_current_account` to the Millstone account.
 - **Alliance and Coldwater** are under Bellhaven but not on the website, with no other account at their address. I could not tell whether they were sold or closed, so I set them to "Needs Review" with a note instead of guessing at Inactive or changing their owner.
-- **Ashtabula** has a PO Box in the CRM where the website shows a street address. The field is a billing address and a PO Box is valid for billing, so I rejected that proposal. *(Confirm this is what you decided.)*
+- **Ashtabula** has a PO Box in the CRM where the website shows a street address. The field is a billing address and a PO Box is valid for billing, so I rejected that proposal.
 - **Phone numbers** often differ between the website and the CRM. The CRM number may be a billing line, so I used phones as evidence only and never proposed changing them.
 - **Duplicates** follow the convention in the brief: `duplicate_of_account` set to the survivor's id, status `Inactive`, plus a note saying which account it duplicates. The duplicate's owner is left as it was.
 
@@ -108,11 +108,19 @@ Two-step changes (create a new account, then point the old one at it) record the
 
 86 automated tests run offline against saved copies of the website and the CRM backup. They cover the scraper, the matching cut-offs, every finding in the table above, the billing rule, the append-only audit trail, safe re-runs, and the end state after approving everything (each of the 35 communities has exactly one active account under Bellhaven).
 
-## Result *(to complete after the review)*
+## Result
 
-- Proposals approved: __ of 29. Rejected: __ (which, and why).
-- A second pipeline run after the review proposed __ new items.
-- Final check of the CRM against the backup showed only the approved changes.
+The review was done in Production on 22 November 2026.
+
+- **Decisions:** 28 of 29 proposals approved, 1 rejected (Ashtabula, because a PO Box is a valid billing address).
+- **Requests sent:** 30, all confirmed by reading the account back: 24 updates and 6 new accounts. None failed.
+- **CRM before and after:** 121 accounts before, 127 after. The 6 new accounts are Batavia, Carlisle, Amberly Manor, Union Square, and the new Tiffin and Marietta accounts. 24 existing accounts changed.
+- **Checked against the backup:** every difference between the CRM and the original backup traces to an approved change in the audit trail, and every audited change is present in the CRM. Nothing else moved.
+- **End state:** each of the 35 website communities has exactly one active account under Bellhaven. 34 match the website exactly; Ashtabula keeps its PO Box by decision.
+- **Duplicates:** 7 accounts are Inactive and point to the surviving account.
+- **Changes of ownership:** 3 accounts carry a `chow_current_account` pointer (Tiffin, Marietta, Sandusky). Their owner, name, status and billing figures are unchanged from the backup.
+- **Needs Review:** Alliance and Coldwater.
+- **Re-run:** a pipeline run after the review proposed 0 new items. The one remaining difference (Ashtabula) was recognised as already decided and not raised again.
 
 ## What I would do next
 
