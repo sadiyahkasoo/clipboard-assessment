@@ -69,11 +69,12 @@ Result: **29 suggestions, 31 requests** (the two change-of-ownership suggestions
 | No longer on website | 2 | Alliance, Coldwater |
 | Sold to another owner | 1 | Sandusky |
 
-## Stage 4: first real changes (needs you)
+## Stage 4: first real changes (done)
 
-One thing cannot be learned without a real request: the CRM's documentation does not say which fields it requires when creating an account. So before recording the demo, switch the app to **Production** and approve two low-risk items:
+One thing could not be learned without a real request: the CRM's documentation does not say which fields it requires when creating an account. So the first two approvals in **Production** were made one at a time and checked before anything else was approved:
 
-1. **One edit:** "Update details: Bellhaven of Portsmouth" (a one-field zip fix, which can be put back from the backup if needed).
+1. **One edit:** "Update details: Bellhaven of Chagrin Falls" (a one-field rename, which could be put back from the backup if needed).
 2. **One creation:** "Create account: Bellhaven of Batavia" (needed anyway, and has no lookalikes).
 
-If both show "confirmed by read-back", the real CRM accepts our requests and the rest can go ahead. If either fails, nothing else is affected: the error is shown and recorded, and the fix is made before continuing.
+Both showed "confirmed by read-back" and were checked directly against the CRM, which proved the real CRM accepts our requests. The remaining items were then approved. All 30 requests succeeded; the results are in [writeup.md](writeup.md).
+
